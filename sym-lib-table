@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Boad_dev")(type "KiCad")(uri "${KIPRJMOD}/libraries/paripalpp-KiCAD_libralies/symbols/Boad_dev.kicad_sym")(options "")(descr ""))
+)

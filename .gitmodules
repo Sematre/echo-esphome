@@ -1,0 +1,3 @@
+[submodule "libraries/paripalpp-KiCAD_libralies"]
+	path = libraries/paripalpp-KiCAD_libralies
+	url = https://github.com/paripalpp/KiCAD_libralies
