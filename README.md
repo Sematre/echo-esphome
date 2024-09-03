@@ -19,6 +19,11 @@ Home Assistant compatible voice assistant, with on-device voice activation, drop
 ### Mainboard
 - 1x Speaker amplifier: [TPA3118D2](https://www.ti.com/product/TPA3118D2) ([Datasheet](https://www.ti.com/lit/ds/symlink/tpa3118d2.pdf))
 
+## Getting started
+```sh
+$ git clone --recurse-submodules https://github.com/Sematre/echo-esphome.git
+```
+
 ## Resources
 - [Retasking a 2nd Gen Echo](https://community.home-assistant.io/t/retasking-a-2nd-gen-echo/709084) *by Terry Sanders*
 - [Inside the Amazon Echo Dot (3rd Gen): A Complete Teardown](https://pallavaggarwal.in/2023/01/10/teardown-amazon-echo-dot-3rd-gen/) *by Pallav Aggarwal*
