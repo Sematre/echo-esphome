@@ -1,0 +1,46 @@
+name: KiCad DRC
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  drc-check:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        submodules: 'true'
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install KiCad CLI
+      run: |
+        sudo add-apt-repository --yes ppa:kicad/kicad-8.0-releases
+        sudo apt-get update && sudo apt-get install --install-recommends -y kicad
+
+    - name: Generate DRC report
+      run: |
+        kicad-cli pcb drc echo-esphome.kicad_pcb --format json --output /tmp/drc_report.json
+
+    - name: Run DRC analysis script
+      run: |
+        python .github/scripts/analyze_kicad_drc.py /tmp/drc_report.json
+      env:
+        PYTHONPATH: ${{ github.workspace }}
+
+    - name: Archive DRC report
+      if: failure()
+      uses: actions/upload-artifact@v3
+      with:
+        name: drc-report
+        path: drc_report.json
