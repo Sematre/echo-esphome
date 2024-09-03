@@ -43,4 +43,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: drc-report
-        path: drc_report.json
+        path: /tmp/drc_report.json
