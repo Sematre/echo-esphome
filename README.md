@@ -1,4 +1,7 @@
 # Echo ESPHome
+> [!NOTE] 
+> :construction: This project is WIP. :construction:
+
 Home Assistant compatible voice assistant, with on-device voice activation, drop-in replacement for Amazon Echo Dot (2nd Gen).
 
 ## Echo Dot (2nd Gen) Hardware
