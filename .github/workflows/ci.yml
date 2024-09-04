@@ -4,9 +4,14 @@ on:
   push:
     branches:
       - main
+    paths:
+      - echo-esphome.kicad_pcb  # Trigger only if echo-esphome.kicad_pcb is changed
+
   pull_request:
     branches:
       - main
+    paths:
+    - echo-esphome.kicad_pcb  # Trigger only if echo-esphome.kicad_pcb is changed
 
 jobs:
   drc-check:
