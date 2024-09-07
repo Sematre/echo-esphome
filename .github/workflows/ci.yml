@@ -24,9 +24,9 @@ jobs:
         submodules: 'true'
 
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
-        python-version: '3.9'
+        python-version: '3.12'
 
     - name: Install KiCad CLI
       run: |
@@ -45,7 +45,7 @@ jobs:
 
     - name: Archive DRC report
       if: failure()
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
-        name: drc-report
+        name: drc-report.json
         path: /tmp/drc_report.json
