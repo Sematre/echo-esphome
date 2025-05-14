@@ -1,6 +1,7 @@
-name: KiCad DRC
+name: KiCad ECR, DRC and Diff
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
